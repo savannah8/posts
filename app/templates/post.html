@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% import 'bootstrap/wtf.html' as wtf%} 
+{% block content %}
+<div class=container>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <h1>List Comments</h1>
+        <hr>
+
+    </div>
+   
+
+    <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">{{ post.post}}</h3>
+              <p class="card-text">{% for comment in comment %} {{ comment.comment }} <br>{% endfor %}</p>
+              <a href="/comment/new/{{ post.id }}"><button type="button" class="btn btn-primary">comment</button>
+                </a>
+            </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<title> {{ title }} </title>
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <h1>HOME PAGE</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <h5 class="category-header">LIST OF CATEGORIES:</h5>
+        </div>
+        <div class="col-md-4 col-lg-4">
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+            <h2 class="category-create">
+                <button type="button" class="btn btn-outline-primary"><a href="/category/new">Add Category</a></button>
+
+
+            </h2>
+        </div>
+    </div>
+
+    <div>
+        {% for categories in category %}
+        <ul>
+            <li>
+                <a href="/category/{{ categories.id }}"><button type="button" class="btn btn-primary btn-lg btn-block">{{ categories.name }}</button></a>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
